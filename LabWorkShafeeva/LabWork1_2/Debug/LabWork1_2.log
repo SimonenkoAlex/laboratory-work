@@ -1,0 +1,17 @@
+﻿  LabWork1_2.cpp
+c:\program_project\visualstudioproject\labworkshafeeva\labwork1_2\labwork1_2.cpp(35): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+c:\program_project\visualstudioproject\labworkshafeeva\labwork1_2\labwork1_2.cpp(37): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\program_project\visualstudioproject\labworkshafeeva\labwork1_2\labwork1_2.cpp(55): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+c:\program_project\visualstudioproject\labworkshafeeva\labwork1_2\labwork1_2.cpp(56): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+c:\program_project\visualstudioproject\labworkshafeeva\labwork1_2\labwork1_2.cpp(72): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\program_project\visualstudioproject\labworkshafeeva\labwork1_2\labwork1_2.cpp(74): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\program_project\visualstudioproject\labworkshafeeva\labwork1_2\labwork1_2.cpp(79): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\program_project\visualstudioproject\labworkshafeeva\labwork1_2\labwork1_2.cpp(93): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\program_project\visualstudioproject\labworkshafeeva\labwork1_2\labwork1_2.cpp(94): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\program_project\visualstudioproject\labworkshafeeva\labwork1_2\labwork1_2.cpp(95): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\program_project\visualstudioproject\labworkshafeeva\labwork1_2\labwork1_2.cpp(109): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\program_project\visualstudioproject\labworkshafeeva\labwork1_2\labwork1_2.cpp(110): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\program_project\visualstudioproject\labworkshafeeva\labwork1_2\labwork1_2.cpp(127): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+c:\program_project\visualstudioproject\labworkshafeeva\labwork1_2\labwork1_2.cpp(156): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\program_project\visualstudioproject\labworkshafeeva\labwork1_2\labwork1_2.cpp(176): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+  LabWork1_2.vcxproj -> C:\Program_Project\VisualStudioProject\LabWorkShafeeva\Debug\LabWork1_2.exe

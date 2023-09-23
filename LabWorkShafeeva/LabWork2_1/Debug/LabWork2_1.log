@@ -1,0 +1,6 @@
+﻿  LabWork2_1.cpp
+c:\program_project\visualstudioproject\labworkshafeeva\labwork2_1\labwork2_1.cpp(24): warning C4305: +=: усечение из "double" в "float"
+c:\program_project\visualstudioproject\labworkshafeeva\labwork2_1\labwork2_1.cpp(52): warning C4305: инициализация: усечение из "double" в "float"
+c:\program_project\visualstudioproject\labworkshafeeva\labwork2_1\labwork2_1.cpp(60): warning C4305: +=: усечение из "double" в "float"
+c:\program_project\visualstudioproject\labworkshafeeva\labwork2_1\labwork2_1.cpp(80): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+  LabWork2_1.vcxproj -> C:\Program_Project\VisualStudioProject\LabWorkShafeeva\Debug\LabWork2_1.exe
