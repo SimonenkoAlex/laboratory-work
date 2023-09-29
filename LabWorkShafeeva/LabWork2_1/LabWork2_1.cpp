@@ -62,14 +62,69 @@ void variant3() {
 	_getch();
 }
 
+void variant4() {
+	system("cls");
+	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	WORD active = FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE;
+	SetConsoleTextAttribute(handle, active);
+	// вариант 4
+	double i = 7, a = 2.2, b = 0.3, y;
+	//printf("Введите t от 7 до 12: ");
+	//scanf_s("%f", &i);
+	do {
+		y = (i < 10) ? a * pow(i, 4.0) + b * i : (i == 10) ? tan(i + 0.5) : exp(2.0 * i) + sqrt(pow(a, 2.0) + pow(i, 2.0));
+		printf("При i = %4.1f\ty = %6.3f\n", i, y);
+		i = floor((i + 0.2) * 10) / 10;
+	} while (i <= 12);
+	_getch();
+}
+
+#define PI 3.1413
+
+void variant5() {
+	system("cls");
+	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	WORD active = FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE;
+	SetConsoleTextAttribute(handle, active);
+	// вариант 5
+	float x = 0.9, a = 1.5, y;
+	//printf("Введите t от 0 до 7: ");
+	//scanf_s("%f", &t);
+	do {
+		if (x < 1.3) y = PI * pow(x, 2) - 7 / pow(x, 2);
+		else if (x >= 3) y = log10(x + 7 * sqrt(x));
+		else y = a * pow(x, 3) + 7 * sqrt(x);
+		printf("При x = %4.1f\ty = %6.3f\n", x, y);
+		x = floor((x + 0.2) * 10) / 10;
+	} while (x <= 5);
+	_getch();
+}
+
+void variant6() {
+	system("cls");
+	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	WORD active = FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE;
+	SetConsoleTextAttribute(handle, active);
+	// вариант 6
+	double t = -1, a = 2.1, b = 0.37, z;
+	//printf("Введите t от 7 до 12: ");
+	//scanf_s("%f", &i);
+	do {
+		z = (t < 0.1) ? sqrt(a * pow(t, 2) + b * sin(t) + 1) : (t >= 2) ? sqrt(a * pow(t, 2) + b * cos(t) + 1) : a * t + b;
+		printf("При t = %4.1f\tz = %6.3f\n", t, z);
+		t = floor((t + 0.2) * 10) / 10;
+	} while (t <= 4);
+	_getch();
+}
+
 void select(int position) {
 	switch (position) {
 	case 0: variant1(); system("cls"); break;
 	case 1: variant2(); system("cls"); break;
 	case 2: variant3(); system("cls"); break;
-	//case 3: variant4(); system("cls"); break;
-	//case 4: variant5(); system("cls"); break;
-	//case 5: variant6(); system("cls"); break;
+	case 3: variant4(); system("cls"); break;
+	case 4: variant5(); system("cls"); break;
+	case 5: variant6(); system("cls"); break;
 	//case 6: variant7(); system("cls"); break;
 	//case 7: variant8(); system("cls"); break;
 	//case 8: variant9(); system("cls"); break;
