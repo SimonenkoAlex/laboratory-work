@@ -1,4 +1,9 @@
 ﻿  LabWork3_1.cpp
-c:\program_project\github\laboratory-work\labworkshafeeva\labwork3_1\labwork3_1.cpp(48): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
-c:\program_project\github\laboratory-work\labworkshafeeva\labwork3_1\labwork3_1.cpp(74): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork3_1\labwork3_1.cpp(50): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork3_1\labwork3_1.cpp(96): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork3_1\labwork3_1.cpp(112): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork3_1\labwork3_1.cpp(198): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork3_1\labwork3_1.cpp(291): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork3_1\labwork3_1.cpp(381): warning C4838: преобразование из "int" в "SHORT" требует сужающего преобразования
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork3_1\labwork3_1.cpp(389): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
   LabWork3_1.vcxproj -> C:\Program_Project\GitHub\laboratory-work\LabWorkShafeeva\Debug\LabWork3_1.exe

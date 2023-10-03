@@ -1,0 +1,5 @@
+﻿  LabWork3_2.cpp
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork3_2\labwork3_2.cpp(17): warning C4305: инициализация: усечение из "double" в "float"
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork3_2\labwork3_2.cpp(62): warning C4838: преобразование из "int" в "SHORT" требует сужающего преобразования
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork3_2\labwork3_2.cpp(70): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+  LabWork3_2.vcxproj -> C:\Program_Project\GitHub\laboratory-work\LabWorkShafeeva\Debug\LabWork3_2.exe
