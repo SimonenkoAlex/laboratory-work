@@ -1,0 +1,17 @@
+﻿  LabWork5_2.cpp
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork5_2\labwork5_2.cpp(17): warning C4305: инициализация: усечение из "double" в "float"
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork5_2\labwork5_2.cpp(40): warning C4305: инициализация: усечение из "double" в "float"
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork5_2\labwork5_2.cpp(69): warning C4305: инициализация: усечение из "double" в "float"
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork5_2\labwork5_2.cpp(88): warning C4305: инициализация: усечение из "double" в "float"
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork5_2\labwork5_2.cpp(92): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork5_2\labwork5_2.cpp(107): warning C4305: инициализация: усечение из "double" в "float"
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork5_2\labwork5_2.cpp(111): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork5_2\labwork5_2.cpp(170): warning C4305: инициализация: усечение из "double" в "float"
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork5_2\labwork5_2.cpp(216): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork5_2\labwork5_2.cpp(315): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork5_2\labwork5_2.cpp(316): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork5_2\labwork5_2.cpp(317): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork5_2\labwork5_2.cpp(385): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork5_2\labwork5_2.cpp(455): warning C4838: преобразование из "int" в "SHORT" требует сужающего преобразования
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork5_2\labwork5_2.cpp(463): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+  LabWork5_2.vcxproj -> C:\Program_Project\GitHub\laboratory-work\LabWorkShafeeva\Debug\LabWork5_2.exe

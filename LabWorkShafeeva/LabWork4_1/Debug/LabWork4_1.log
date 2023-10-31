@@ -1,0 +1,8 @@
+﻿  LabWork4_1.cpp
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork4_1\labwork4_1.cpp(360): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork4_1\labwork4_1.cpp(386): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork4_1\labwork4_1.cpp(388): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork4_1\labwork4_1.cpp(442): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork4_1\labwork4_1.cpp(568): warning C4838: преобразование из "int" в "SHORT" требует сужающего преобразования
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork4_1\labwork4_1.cpp(576): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+  LabWork4_1.vcxproj -> C:\Program_Project\GitHub\laboratory-work\LabWorkShafeeva\Debug\LabWork4_1.exe

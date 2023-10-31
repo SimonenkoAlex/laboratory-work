@@ -1,0 +1,7 @@
+﻿  LabWork6_1.cpp
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork6_1\labwork6_1.cpp(62): warning C4305: инициализация: усечение из "double" в "float"
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork6_1\labwork6_1.cpp(111): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork6_1\labwork6_1.cpp(128): warning C4305: инициализация: усечение из "double" в "float"
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork6_1\labwork6_1.cpp(172): warning C4838: преобразование из "int" в "SHORT" требует сужающего преобразования
+c:\program_project\github\laboratory-work\labworkshafeeva\labwork6_1\labwork6_1.cpp(180): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+  LabWork6_1.vcxproj -> C:\Program_Project\GitHub\laboratory-work\LabWorkShafeeva\Debug\LabWork6_1.exe
