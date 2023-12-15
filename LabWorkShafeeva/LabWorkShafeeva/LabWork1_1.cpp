@@ -8,10 +8,16 @@
 #define c -0.7
 #define PI 3.1413
 
+float func(int x)
+{
+	float A = 0.7f, B = 2.f, C = 2.1f;
+	return sin(x) / sqrtf(1 + powf(A, 2.0) * powf(sin(x), 2.0)) - C * log(A * x);
+}
+
 void main()
 {
 	setlocale(LC_CTYPE, "rus");
-	// вариант 1: x1 = 1, x2 = 2
+	// ЛР-1.1 вариант 1: x1 = 1, x2 = 2
 	int x; 
 	printf("Введите X: ");
 	scanf_s("%d", &x);
@@ -23,26 +29,28 @@ void main()
 
 	system("cls");
 
-	// вариант 2: x1 = 1, x2 = 2
+	// ЛР-8.1 вариант 2: x1 = 1, x2 = 2
 	printf("Введите X: ");
 	scanf_s("%d", &x);
-	float A = 0.7, B, C = 2.1;
-	float y = sin(x) / sqrtf(1 + powf(A, 2.0) * powf(sin(x), 2.0)) - C * log(A * x);
-	printf("y = %8.4f при x = %d\n", y, x);
+	printf("y = %8.4f при x = %d\n", func(x), x);
 	_getch();
 	// y = 1.4741 при x = 1
 	// y = 0.0605 при x = 2
 
 	system("cls");
-
-
-
+	///
+	///
+	///
+	/// Результаты для вариантов 3-20
+	///
+	///
+	///
 	printf("__________________________________________\n");
 	printf("|  №  |  x  |  a  |  b  |  c  |  Result  |\n");
 	printf("__________________________________________\n");
 
 	// вариант 3
-	float x1 = 0.0, x2 = 2.0; A = 2.0, B = 1.2, C = 1.0;
+	float x1 = 0.0, x2 = 2.0, A = 2.0, B = 1.2, C = 1.0;
 	float z1 = sqrtf(A + B - exp(sin(x1)) + C);
 	float z2 = sqrtf(A + B - exp(sin(x2)) + C);
 	printf("|  3  |%5.2f|%5.2f|%5.2f|%5.2f|%10.3f|\n", x1, A, B, C, z1);
