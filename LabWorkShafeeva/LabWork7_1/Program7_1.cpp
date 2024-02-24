@@ -411,6 +411,7 @@ void variant14() {
 	_getch();
 }
 
+// вариант 15 - неубывание сумм элементов
 void variant15() {
 	system("cls");
 	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -442,20 +443,33 @@ void variant15() {
 		printf(" %3d |", sum[i]);
 	}
 	printf("\n");
-	int min = sum[0], temp;
-	for (int i = 1; i < N; i++)
+	int temp;
+	for (int k = 0; k < N; k++)
 	{
-		if (min > sum[i])
+		for (int i = 0; i < N - 1; i++)
 		{
-			for (int j = 0; j < N; j++)
+			if (sum[i] > sum[i + 1])
 			{
-				temp = A[i][j];
-				A[i][j] = A[i - 1][j];
-				A[i - 1][j] = temp;
+				temp = sum[i];
+				sum[i] = sum[i + 1];
+				sum[i + 1] = temp;
+				for (int j = 0; j < M; j++)
+				{
+					temp = A[i][j];
+					A[i][j] = A[i + 1][j];
+					A[i + 1][j] = temp;
+				}
 			}
-			min = sum[i];
 		}
 	}
+
+	printf("Отсортированный массив сумм: \n");
+	for (int i = 0; i < N; i++)
+	{
+		printf(" %3d |", sum[i]);
+	}
+	printf("\n");
+
 	printf("Новая матрица А[%d][%d]: \n", N, M);
 	for (int i = 0; i < N; i++)
 	{
@@ -467,6 +481,288 @@ void variant15() {
 	}
 	_getch();
 }
+
+// вариант 16 - седловые точки
+void variant16() {
+	system("cls");
+	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	WORD active = FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE;
+	SetConsoleTextAttribute(handle, active);
+	// вариант 16
+	const int N = 6, M = 8;
+	int A[N][M] =	// Двумерный массив
+	{
+		{1,  1,  1,  1,  1,  21, 1,  1},
+		{1,  1,  1,  1,  1,  12, 1,  1},
+		{1,  1,  1,  1,  1,  15, 1,  1},
+		{11, 10, 12, 14, 15, 17, 16, 18},
+		{1,  1,  1,  1,  1,  22, 1,  1},
+		{1,  1,  1,  1,  1,  19, 1,  1}
+	};
+	int m, k;             // Счетчики
+	int max;              // Максимальный элемент в столбце
+	int max_i = 0;        // Номер строки max
+	printf("Матрица А[%d][%d]: \n", N, M);
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < M; j++)
+		{
+			printf(" %3d |", A[i][j]);
+		}
+		printf("\n");
+	}
+	/*Поиск седловой точки по столбцам*/
+	for (int j = 0; j < M; j++) {
+		max = A[0][j];
+
+		/*Поиск максимального элемента в столбце*/
+		for (int i = 1; i < N; i++) {
+			if (max < A[i][j]) {
+				max = A[i][j];
+				max_i = i;
+			}
+		}
+		/*Проверка равных максимальных значений в столбце*/
+		for (int i = 0; i < N; i++) {
+			m = 0;
+			if (max == A[i][j]) {
+
+				/*Проверка условия седловой точки*/
+				for (k = 0; k < M; k++) {
+					if (max <= A[i][k]) {
+						m++;
+					}
+					else
+						break;
+				}
+
+				/*Вывод седловой точки*/
+				if (m == 8)
+					printf("\nСедловая точка: %d\t Строка: %d\t Столбец: %d\t\n", max, i + 1, j + 1);
+			}
+		}
+	}
+
+	/*Поиск седловой точки по сторокам*/
+	for (int j = 0; j < N; j++) {
+		max = A[j][0];
+
+		/*Поиск максимального элемента в столбце*/
+		for (int i = 1; i < M; i++) {
+			if (max < A[j][i]) {
+				max = A[j][i];
+				max_i = j;
+			}
+		}
+		/*Проверка равных максимальных значений в столбце*/
+		for (int i = 0; i < M; i++) {
+			m = 0;
+			if (max == A[j][i]) {
+
+				/*Проверка условия седловой точки*/
+				for (k = 0; k < N; k++) {
+					if (max <= A[k][i]) {
+						m++;
+					}
+					else
+						break;
+				}
+
+				/*Вывод седловой точки*/
+				if (m == 6)
+					printf("\nСедловая точка: %d\t Строка: %d\t Столбец: %d\t\n", max, j + 1, i + 1);
+			}
+		}
+	}
+	_getch();
+}
+
+// вариант 17 - радиус наименьшего круга
+void variant17() {
+	system("cls");
+	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	WORD active = FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE;
+	SetConsoleTextAttribute(handle, active);
+	// вариант 17
+	const int N = 6, M = 2;
+	float A[N][M] =	// Двумерный массив
+	{
+		{1.3,  2.1},
+		{1.9,  1.5},
+		{2.1,  4.3},
+		{2.3,  1.1},
+		{2.2,  1.8},
+		{1.6,  4.1}
+	};
+	float R = 0.f;
+	printf("Матрица А[%d][%d] координат точек на плоскости: \n", N, M);
+	for (int i = 0; i < N; i++)
+	{
+		printf("X = %3.1f | Y = %3.1f\n", A[i][0], A[i][1]);
+		if (pow(A[i][0], 2) + pow(A[i][1], 2) > R) 
+			R = pow(A[i][0], 2) + pow(A[i][1], 2);
+	}
+	R = sqrtf(R);
+	printf("Радиус наименьшего круга = %3.1f", R);
+	_getch();
+}
+
+// вариант 18 - "особые" элементы
+void variant18() {
+	system("cls");
+	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	WORD active = FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE;
+	SetConsoleTextAttribute(handle, active);
+	// вариант 18
+	const int N = 6, M = 8;
+	int F[N][M] =	// Двумерный массив
+	{
+		{1,  1,  1,  3,  1,  21, 1,  1},
+		{1,  1,  1,  1,  1,  12, 1,  1},
+		{1,  1,  12, 1,  1,  15, 1,  1},
+		{11, 10, 1,  1,  1,  17, 16, 2},
+		{1,  1,  1,  2,  1,  22, 1,  1},
+		{1,  1,  1,  1,  15, 19, 1,  1}
+	};
+	int sum = 0, osob = 0;
+	printf("Матрица А[%d][%d]: \n", N, M);
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < M; j++)
+		{
+			printf(" %3d |", F[i][j]);
+		}
+		printf("\n");
+	}
+	// цикл для обхода каждого столбца матрицы
+	for (int j = 0; j < M; j++)
+	{
+		sum = 0; // поиск суммы элементов каждого столбца
+		for (int i = 0; i < N; i++)
+		{
+			sum += F[i][j];
+		}
+
+		for (int i = 0; i < N; i++)
+		{
+			if (F[i][j] > sum - F[i][j]) osob++;
+		}
+	}
+	printf("Кол-во \"особых\" элементов = %d", osob);
+	_getch();
+}
+
+// вариант 19 - упорядочить элементы строк по убыванию
+void variant19() {
+	system("cls");
+	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	WORD active = FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE;
+	SetConsoleTextAttribute(handle, active);
+	// вариант 19
+	const int N = 5, M = 6;
+	int D[N][M] =	// Двумерный массив
+	{
+		{1,  2,  3,  4,  5,  6},
+		{7,  8,  9,  6,  5,  4},
+		{11, 1, 12,  2, 13,  3},
+		{4, 14,  5, 15,  6, 16},
+		{7, 11, 21, 14, 18,  9}
+	};
+	int temp;
+	printf("Матрица А[%d][%d]: \n", N, M);
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < M; j++)
+		{
+			printf(" %3d |", D[i][j]);
+		}
+		printf("\n");
+	}
+
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < M - 1; j++)
+		{
+			for (int k = M - 2; k >= j; k--)
+			{
+				if (D[i][k] < D[i][k + 1])
+				{
+					temp = D[i][k];
+					D[i][k] = D[i][k + 1];
+					D[i][k + 1] = temp;
+				}
+			}
+		}
+	}
+	
+	printf("Матрица результата: \n");
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < M; j++)
+		{
+			printf(" %3d |", D[i][j]);
+		}
+		printf("\n");
+	}
+	_getch();
+}
+
+// вариант 20 - наибольшее расстояние между точками
+void variant20() {
+	system("cls");
+	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	WORD active = FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE;
+	SetConsoleTextAttribute(handle, active);
+	// вариант 20
+	const int N = 6, M = 2;
+	float A[N][M] =	// Двумерный массив
+	{
+		{1.3,  2.1},
+		{1.9,  1.5},
+		{2.1,  4.3},
+		{2.3,  1.1},
+		{2.2,  1.8},
+		{1.6,  4.1}
+	};
+	float L = 0.f;
+	printf("Матрица А[%d][%d] координат точек на плоскости: \n", N, M);
+	for (int i = 0; i < N - 1; i++)
+	{
+		printf("X = %3.1f | Y = %3.1f\n", A[i][0], A[i][1]);
+	}
+
+	for (int i = 0; i < N - 1; i++)
+	{
+		for (int j = i + 1; j < N; j++)
+		{
+			L = fmaxf(L, sqrt(pow(A[i][0] - A[j][0], 2) + pow(A[i][1] - A[j][1], 2)));
+		}
+	}
+	printf("Наибольшее расстояние L = %3.1f", L);
+	_getch();
+}
+
+// программа 7_2 - таблица Пифагора
+void Pythagoras() {
+	system("cls");
+	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	WORD active = FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE;
+	SetConsoleTextAttribute(handle, active);
+	// программа 7_2
+	int A[10][10];
+	printf("Таблица Пифагора: \n");
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < 10; j++)
+		{
+			A[i][j] = (i + 1) * (j + 1);
+			printf(" %3d |", A[i][j]);
+		}
+		printf("\n");
+	}
+	_getch();
+}
+
 
 void select(int position) {
 	switch (position) {
@@ -485,12 +781,13 @@ void select(int position) {
 	case 12: variant13(); system("cls"); break;
 	case 13: variant14(); system("cls"); break;
 	case 14: variant15(); system("cls"); break;
-	//case 15: variant16(); system("cls"); break;
-	//case 16: variant17(); system("cls"); break;
-	//case 17: variant18(); system("cls"); break;
-	//case 18: variant19(); system("cls"); break;
-	//case 19: variant20(); system("cls"); break;
-	case 20: exit(0);
+	case 15: variant16(); system("cls"); break;
+	case 16: variant17(); system("cls"); break;
+	case 17: variant18(); system("cls"); break;
+	case 18: variant19(); system("cls"); break;
+	case 19: variant20(); system("cls"); break;
+	case 20: Pythagoras(); system("cls"); break;
+	case 21: exit(0);
 	}
 }
 
@@ -512,9 +809,9 @@ void main() {
 	char lines[][20] = { "Вариант 1", "Вариант 2", "Вариант 3", "Вариант 4", "Вариант 5",
 		"Вариант 6", "Вариант 7", "Вариант 8", "Вариант 9", "Вариант 10", "Вариант 11",
 		"Вариант 12", "Вариант 13", "Вариант 14", "Вариант 15", "Вариант 16", "Вариант 17",
-		"Вариант 18", "Вариант 19", "Вариант 20", "Выход" };
+		"Вариант 18", "Вариант 19", "Вариант 20", "Таблица Пифагора", "Выход" };
 	COORD coordinate;
-	int position = 0, lastItemMenu = 21;
+	int position = 0, lastItemMenu = 22;
 	char code;
 	while (true) {
 		system("cls");

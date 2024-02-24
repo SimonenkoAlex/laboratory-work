@@ -136,6 +136,14 @@ void variant3() {
 	_getch();
 }
 
+float median(float triangle[3], float* mb, float* mc)
+{
+	float ma = sqrt(2 * pow(triangle[1], 2) + 2 * pow(triangle[2], 2) - pow(triangle[0], 2)) / 2;
+	*mb = sqrt(2 * pow(triangle[0], 2) + 2 * pow(triangle[2], 2) - pow(triangle[1], 2)) / 2;
+	*mc = sqrt(2 * pow(triangle[0], 2) + 2 * pow(triangle[1], 2) - pow(triangle[2], 2)) / 2;
+	return ma;
+}
+
 void variant4() {
 	system("cls");
 	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -143,13 +151,212 @@ void variant4() {
 	SetConsoleTextAttribute(handle, active);
 	// вариант 4
 	float A[3] = { 2.3, 4.4, 6.1 };
-	float B[3] = { 4.3, 8.2, 1.1 };
-	float C[3] = { 4.3, 8.2, 1.1 };
+	float B[3] = { 4.3, 6.2, 1.1 };
+	float C[3] = { 5.6, 7.2, 2.1 };
 	float ma, mb, mc;
-	ma = sqrt(2 * pow(b, 2) + 2 * pow(c, 2) - pow(a, 2)) / 2;
-	mb = sqrt(2 * pow(a, 2) + 2 * pow(c, 2) - pow(b, 2)) / 2;
-	mc = sqrt(2 * pow(a, 2) + 2 * pow(b, 2) - pow(c, 2)) / 2;
-	printf("Длины медиан треугольника ABC:\nma = %6.3f, mb = %6.3f, mc = %6.3f\n", ma, mb, mc);
+	ma = median(A, &mb, &mc);
+	printf("Длины медиан треугольника A:\nma = %6.3f, mb = %6.3f, mc = %6.3f\n", ma, mb, mc);
+	ma = median(B, &mb, &mc);
+	printf("Длины медиан треугольника B:\nma = %6.3f, mb = %6.3f, mc = %6.3f\n", ma, mb, mc);
+	ma = median(C, &mb, &mc);
+	printf("Длины медиан треугольника C:\nma = %6.3f, mb = %6.3f, mc = %6.3f\n", ma, mb, mc);
+	_getch();
+}
+
+float totalsum(float massA[6], float massB[8], float massC[7])
+{
+	float sum = 0.f;
+	printf("Положительные элементы трёх массивов: \n");
+	for (int i = 0; i < 6; i++)
+	{
+		if (massA[i] > 0)
+		{
+			sum += massA[i];
+			printf("%4.2f + ", massA[i]);
+		}
+	}
+	for (int i = 0; i < 8; i++)
+	{
+		if (massB[i] > 0)
+		{
+			sum += massB[i];
+			printf("%4.2f + ", massB[i]);
+		}
+	}
+	for (int i = 0; i < 7; i++)
+	{
+		if (massC[i] > 0)
+		{
+			sum += massC[i];
+			printf("%4.2f + ", massC[i]);
+		}
+	}
+	printf("0\n");
+	return sum;
+}
+
+void variant5() {
+	system("cls");
+	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	WORD active = FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE;
+	SetConsoleTextAttribute(handle, active);
+	// вариант 5
+	float A[6] = { -2.3, 4.4, 6.1, 7.3, -5.2, 1.3 };
+	float B[8] = { 4.3, -6.2, 1.1, -6.9, 3.3, 2.0, -1.7, 4.4 };
+	float C[7] = { 5.6, -7.2, -2.1, 8.03, 5.1, -3.3, 2.9 };
+	float S = totalsum(A, B, C);
+	printf("Общая сумма положительных элементов = %6.3f\n", S);
+	_getch();
+}
+
+int countNegative(int mass[4][5])
+{
+	int count = 0;
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = 0; j < 5; j++)
+		{
+			if (mass[i][j] < 0) count++;
+		}
+	}
+	return count;
+}
+
+void variant6() {
+	system("cls");
+	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	WORD active = FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE;
+	SetConsoleTextAttribute(handle, active);
+	// вариант 6
+	int A[4][5] =
+	{
+		{1, -2,  3,  4, -5},
+		{6,  5,  -4, 3,  2},
+		{-7, 8,  9,  9,  8},
+		{9, -8,  7, -7,  8}
+	};
+	int B[4][5] =
+	{
+		{1,  20,  -3,  4,  5},
+		{-2, 1,  -65,  3,  43},
+		{-3, -6, -12,  5, -2},
+		{4,  3,  -5,  -1,  18}
+	};
+	int count = countNegative(A);
+	printf("Кол-во отрицательных элементов в массиве A = %d\n", count);
+	printf("Кол-во отрицательных элементов в массиве B = %d\n", countNegative(B));
+	_getch();
+}
+
+int maxim(int mass[8])
+{
+	int max = mass[0];
+	for (int i = 1; i < 6; i++)
+	{
+		if (mass[i] > max) max = mass[i];
+	}
+	printf("Максимальный элемент равен %d\n", max);
+	return max;
+}
+
+void variant7() {
+	system("cls");
+	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	WORD active = FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE;
+	SetConsoleTextAttribute(handle, active);
+	// вариант 7
+	int A[8] = {1, -2, 3, 4, -5, 6, 5, -4};
+	int B[8] = {1, 20, -3, 4, 5, -2, 1, -65};
+	int sum = maxim(A) + maxim(B);
+	printf("Сумма максимальных элементов = %d\n", sum);
+	_getch();
+}
+
+int multiplyMainDiagonal(int mass[5][5])
+{
+	int multiply = 1;
+	for (int i = 0; i < 5; i++)
+	{
+		multiply *= mass[i][i];
+	}
+	return multiply;
+}
+
+void variant8() {
+	system("cls");
+	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	WORD active = FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE;
+	SetConsoleTextAttribute(handle, active);
+	// вариант 8
+	int A[5][5] =
+	{
+		{1, -2,  3,  4, -5},
+		{6,  5,  -4, 3,  2},
+		{-7, 8,  9,  9,  8},
+		{9, -8,  7,  7,  8},
+		{2,  7, -5,  8,  3}
+	};
+	int B[5][5] =
+	{
+		{8,  20,  -3,  4,  5},
+		{-2,  1, -65,  3, 43},
+		{-3, -6,  12,  5, -2},
+		{4,   3,  -5,  2, 18},
+		{4,   2, -11,  8,  1}
+	};
+	int result = multiplyMainDiagonal(A);
+	printf("Произведение элементов главной диагонали в массиве A = %d\n", result);
+	printf("Произведение элементов главной диагонали в массиве B = %d\n", multiplyMainDiagonal(B));
+	_getch();
+}
+
+void geometricMean(float massA[6], float massB[8], float massC[7])
+{
+	float geometric = 1.f;
+	printf("Положительные элементы массива A: \n SQRT(");
+	for (int i = 0; i < 6; i++)
+	{
+		if (massA[i] > 0)
+		{
+			geometric *= massA[i];
+			printf("%4.2f * ", massA[i]);
+		}
+	}
+	printf("1) = %.3f\n", sqrtf(geometric));
+	geometric = 1.f;
+	printf("Положительные элементы массива B: \n SQRT(");
+	for (int i = 0; i < 8; i++)
+	{
+		if (massB[i] > 0)
+		{
+			geometric *= massB[i];
+			printf("%4.2f * ", massB[i]);
+		}
+	}
+	printf("1) = %.3f\n", sqrtf(geometric));
+	geometric = 1.f;
+	printf("Положительные элементы массива C: \n SQRT(");
+	for (int i = 0; i < 7; i++)
+	{
+		if (massC[i] > 0)
+		{
+			geometric *= massC[i];
+			printf("%4.2f * ", massC[i]);
+		}
+	}
+	printf("1) = %.3f\n", sqrtf(geometric));
+}
+
+void variant9() {
+	system("cls");
+	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	WORD active = FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE;
+	SetConsoleTextAttribute(handle, active);
+	// вариант 9
+	float A[6] = { -2.3, 4.4, 6.1, 7.3, -5.2, 1.3 };
+	float B[8] = { 4.3, -6.2, 1.1, -6.9, 3.3, 2.0, -1.7, 4.4 };
+	float C[7] = { 5.6, -7.2, -2.1, 8.03, 5.1, -3.3, 2.9 };
+	geometricMean(A, B, C);
 	_getch();
 }
 
@@ -158,12 +365,12 @@ void select(int position) {
 	case 0: variant1(); system("cls"); break;
 	case 1: variant2(); system("cls"); break;
 	case 2: variant3(); system("cls"); break;
-	//case 3: variant4(); system("cls"); break;
-	//case 4: variant5(); system("cls"); break;
-	//case 5: variant6(); system("cls"); break;
-	//case 6: variant7(); system("cls"); break;
-	//case 7: variant8(); system("cls"); break;
-	//case 8: variant9(); system("cls"); break;
+	case 3: variant4(); system("cls"); break;
+	case 4: variant5(); system("cls"); break;
+	case 5: variant6(); system("cls"); break;
+	case 6: variant7(); system("cls"); break;
+	case 7: variant8(); system("cls"); break;
+	case 8: variant9(); system("cls"); break;
 	//case 9: variant10(); system("cls"); break;
 	//case 10: variant11(); system("cls"); break;
 	//case 11: variant12(); system("cls"); break;
