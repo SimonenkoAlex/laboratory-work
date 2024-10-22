@@ -66,24 +66,26 @@ void variant3() {
 	int k;
 	printf("Введите число месяца: ");
 	scanf_s("%d", &k);
-	switch (k)
-	{
-	case 1: case 8: case 15: case 22: case 29:
-		printf("%d-е число - понедельник", k); break;
-	case 2: case 9: case 16: case 23: case 30:
-		printf("%d-е число - вторник", k); break;
-	case 3: case 10: case 17: case 24:
-		printf("%d-е число - среда", k); break;
-	case 4: case 11: case 18: case 25:
-		printf("%d-е число - четверг", k); break;
-	case 5: case 12: case 19: case 26:
-		printf("%d-е число - пятница", k); break;
-	case 6: case 13: case 20: case 27:
-		printf("%d-е число - суббота", k); break;
-	case 7: case 14: case 21: case 28:
-		printf("%d-е число - воскресенье", k); break;
-	default: printf("В месяце НЕТ такого дня!!!");
+	if (k > 0 && k < 32) {
+		switch (k % 7)
+		{
+		case 1:
+			printf("%d-е число - понедельник", k); break;
+		case 2:
+			printf("%d-е число - вторник", k); break;
+		case 3:
+			printf("%d-е число - среда", k); break;
+		case 4:
+			printf("%d-е число - четверг", k); break;
+		case 5:
+			printf("%d-е число - пятница", k); break;
+		case 6:
+			printf("%d-е число - суббота", k); break;
+		case 0:
+			printf("%d-е число - воскресенье", k); break;
+		}
 	}
+	else printf("В месяце НЕТ такого дня!!!");
 	_getch();
 }
 
@@ -159,34 +161,41 @@ void variant5() {
 	int k, h, m;
 	printf("Введите k секунда суток: ");
 	scanf_s("%d", &k);
-	h = k / 3600;
-	m = (k - 3600 * h) / 60;
-	switch (h)
+	h = k / (60 * 60);
+	m = (k - 60 * 60 * h) / 60;
+	switch (h % 10)
 	{
-	case 1: case 21: 
-		printf("%d час и ", h); break;
-	case 2: case 3: case 4: case 22: case 23:
-		printf("%d часа и ", h); break;
+	case 1: 
+	{
+		if (h == 11) printf("%d часов и ", h);
+		else printf("%d час и ", h); 
+		break;
+	}
+	case 2: case 3: case 4:
+	{
+		if (h == 12 || h == 13 || h == 14) printf("%d часов и ", h);
+		else printf("%d часа и ", h); 
+		break;
+	}
 	case 0: case 5: case 6: case 7: case 8: case 9:
-	case 10: case 11: case 12: case 13: case 14: 
-	case 15: case 16: case 17: case 18: case 19: case 20:
 		printf("%d часов и ", h); break;
 	default: printf("В сутках ВСЕГО 24 часа, a НЕ %d !!!\n", h); break;
 	}
-	switch (m)
+	switch (m % 10)
 	{
-	case 1: case 21: case 31: case 41: case 51: 
-		printf("%d минута\n", m); break;
-	case 2: case 3: case 4: case 22: case 23: case 24: case 32: case 33: 
-	case 34: case 42: case 43: case 44: case 52: case 53: case 54:
-		printf("%d минуты\n", m); break;
+	case 1: 
+	{
+		if (m == 11) printf("%d минут\n", m);
+		else printf("%d минута\n", m); 
+		break;
+	}
+	case 2: case 3: case 4: 
+	{
+		if (m == 12 || m == 13 || m == 14) printf("%d минут\n", m);
+		else printf("%d минуты\n", m);
+		break;
+	}
 	case 0: case 5: case 6: case 7: case 8: case 9:
-	case 10: case 11: case 12: case 13: case 14:
-	case 15: case 16: case 17: case 18: case 19: 
-	case 20: case 25: case 26: case 27: case 28: case 29:
-	case 30: case 35: case 36: case 37: case 38: case 39:
-	case 40: case 45: case 46: case 47: case 48: case 49:
-	case 50: case 55: case 56: case 57: case 58: case 59:
 		printf("%d минут\n", m); break;
 	default: printf("В часе ВСЕГО 60 минут!!!\n"); break;
 	}

@@ -10,7 +10,7 @@
 
 float func(int x)
 {
-	float A = 0.7f, B = 2.f, C = 2.1f;
+	const float A = 0.7f, B = 2.f, C = 2.1f;
 	return sin(x) / sqrtf(1 + powf(A, 2.0) * powf(sin(x), 2.0)) - C * log(A * x);
 }
 

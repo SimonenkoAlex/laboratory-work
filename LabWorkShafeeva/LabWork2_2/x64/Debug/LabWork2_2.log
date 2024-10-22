@@ -1,0 +1,11 @@
+﻿  LabWork2_2.cpp
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork2_2\LabWork2_2.cpp(221,10): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork2_2\LabWork2_2.cpp(227,26): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork2_2\LabWork2_2.cpp(233,22): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork2_2\LabWork2_2.cpp(239,15): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork2_2\LabWork2_2.cpp(316,9): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork2_2\LabWork2_2.cpp(322,13): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork2_2\LabWork2_2.cpp(328,19): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork2_2\LabWork2_2.cpp(449,12): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork2_2\LabWork2_2.cpp(478,13): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+  LabWork2_2.vcxproj -> C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\x64\Debug\LabWork2_2.exe
