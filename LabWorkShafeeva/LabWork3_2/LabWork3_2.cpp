@@ -220,7 +220,7 @@ void variant9() {
 	do {
 		mass[1][i] = sqrt(exp(mass[0][i]) - 1);
 		mass[2][i] = mass[0][i] * pow(logf(mass[0][i]), 2);
-		printf("|%3d|%9.3f|%8.4f|%8.4f|\n", i, mass[0][i], mass[1][i], mass[2][i]);
+		printf("|%3d|%9.3f|%8.4f|%8.4f|\n", i + 1, mass[0][i], mass[1][i], mass[2][i]);
 		mass[0][i + 1] = mass[0][i] + dx; i++;
 	} while (i < n);
 	printf(" _______________________________ \n");
@@ -315,20 +315,19 @@ void variant13() {
 	WORD active = FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE;
 	SetConsoleTextAttribute(handle, active);
 	const float a = 0.0f, b = M_PI;
-	int n; float x = a, dx, F1, F2;
+	int n; float dx, F1, F2;
 	printf("¬ведите число точек: ");
 	scanf_s("%d", &n); // 20
 	dx = fabsf(b - a) / (n - 1);
-	printf(" _______________________________ \n");
-	printf("| I |    X    |   F1   |   F2   |\n");
-	printf("|---|---------|--------|--------|\n");
-	for (int i = 1; i <= n; i++) {
+	printf(" ___________________________ \n");
+	printf("|    X    |   F1   |   F2   |\n");
+	printf("|---------|--------|--------|\n");
+	for (float x = a; x < b + dx / 2; x+=dx) {
 		F1 = exp(-x) + cos(2 * x);
 		F2 = exp(-2 * x);
-		printf("|%3d|%9.3f|%8.4f|%8.4f|\n", i, x, F1, F2);
-		x += dx;
+		printf("|%9.3f|%8.4f|%8.4f|\n", x, F1, F2);
 	}
-	printf(" _______________________________ \n");
+	printf(" ___________________________ \n");
 	_getch();
 }
 

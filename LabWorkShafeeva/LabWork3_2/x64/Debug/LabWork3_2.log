@@ -1,0 +1,24 @@
+﻿  LabWork3_2.cpp
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork3_2\LabWork3_2.cpp(17,36): warning C4305: инициализация: усечение из "double" в "float"
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork3_2\LabWork3_2.cpp(101,14): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork3_2\LabWork3_2.cpp(116,32): warning C4305: инициализация: усечение из "double" в "float"
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork3_2\LabWork3_2.cpp(126,28): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork3_2\LabWork3_2.cpp(140,23): warning C4305: инициализация: усечение из "double" в "float"
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork3_2\LabWork3_2.cpp(140,33): warning C4305: инициализация: усечение из "double" в "float"
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork3_2\LabWork3_2.cpp(197,35): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork3_2\LabWork3_2.cpp(222,27): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork3_2\LabWork3_2.cpp(263,39): warning C4305: инициализация: усечение из "double" в "float"
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork3_2\LabWork3_2.cpp(273,12): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork3_2\LabWork3_2.cpp(290,23): warning C4305: инициализация: усечение из "double" в "float"
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork3_2\LabWork3_2.cpp(290,33): warning C4305: инициализация: усечение из "double" в "float"
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork3_2\LabWork3_2.cpp(317,32): warning C4305: инициализация: усечение из "double" в "float"
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork3_2\LabWork3_2.cpp(374,28): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork3_2\LabWork3_2.cpp(397,29): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork3_2\LabWork3_2.cpp(421,19): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork3_2\LabWork3_2.cpp(446,11): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork3_2\LabWork3_2.cpp(469,18): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork3_2\LabWork3_2.cpp(494,30): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork3_2\LabWork3_2.cpp(529,22): warning C4838: Преобразование из "int" в "SHORT" требует сужающего преобразования.
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork3_2\LabWork3_2.cpp(529,29): warning C4838: Преобразование из "int" в "SHORT" требует сужающего преобразования.
+C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\LabWork3_2\LabWork3_2.cpp(537,13): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+  LabWork3_2.vcxproj -> C:\Users\IVT-344-7\source\repos\GitHub\laboratory-work\LabWorkShafeeva\x64\Debug\LabWork3_2.exe
